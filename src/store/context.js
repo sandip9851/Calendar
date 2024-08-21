@@ -63,13 +63,16 @@ const DataProvider = ({ children }) => {
 
   const renderEventContent = (eventInfo) => {
     return (
-      <div>
+      <div className="event-details">
         <b>{eventInfo.timeText}</b>
         <i>{eventInfo.event.extendedProps.type}</i>
+        <div className="event-details-button">
         <Link to={"/details"}>
           <button onClick={() => SeeMore(eventInfo.event)}>More</button>
         </Link>
         <button onClick={() => handelDelete(eventInfo.event.id)}>X</button>
+        </div>
+      
       </div>
     );
   };
